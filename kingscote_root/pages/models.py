@@ -10,3 +10,8 @@ class Page(models.Model):
         return self.title
         
 # Create your models here.
+
+
+if __name__ == "__main__":
+    pass
+    

@@ -32,7 +32,10 @@ ALLOWED_HOSTS = ['127.0.0.1']
 
 INSTALLED_APPS = [
     'pages.apps.PagesConfig',
+    'register.apps.RegisterConfig',
     
+    'django_countries',
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

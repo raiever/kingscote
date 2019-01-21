@@ -15,7 +15,6 @@ def index(request, pagename):
         'page_list': Page.objects.all(),
     }
     # assert False
-    #return HttpResponse("<h1> Kingscote Homepage </h1>")
     return render(request, 'pages/page.html', context)
 
 def contact(request):

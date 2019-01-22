@@ -8,6 +8,6 @@ class StudentForm(ModelForm):
     class Meta:
         model = Student
         fields = [
-            'name', 'address', 'mobile', 'email', 'age', 'nationality', 
+            'name', 'address', 'mobile', 'email', 'age', 'country',
             'en_level', 'attached_files'
         ]

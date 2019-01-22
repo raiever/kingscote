@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django_countries.fields import CountryField
 
 NATION_CHOICES = (
     ('KOR', 'South Korea'),
@@ -20,7 +21,8 @@ class Student(models.Model):
     mobile = models.CharField(max_length=30, blank=True)
     email = models.EmailField()
     age = models.IntegerField(blank=True)
-    nationality = models.CharField(max_length=20, choices=NATION_CHOICES)
+    # nationality = models.CharField(max_length=20, choices=NATION_CHOICES)
+    country = CountryField()
     en_level = models.CharField('English Level', max_length=40, choices=LEVEL_CHOICES)
     attached_files = models.FileField(upload_to='uploads/', blank=True)
     submitted = models.DateField(auto_now_add=True)

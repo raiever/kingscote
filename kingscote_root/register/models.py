@@ -22,7 +22,7 @@ class Student(models.Model):
     email = models.EmailField()
     age = models.IntegerField(blank=True)
     # nationality = models.CharField(max_length=20, choices=NATION_CHOICES)
-    country = CountryField()
+    country = CountryField(blank_label='(Select Country)', blank=True)
     en_level = models.CharField('English Level', max_length=40, choices=LEVEL_CHOICES)
     attached_files = models.FileField(upload_to='uploads/', blank=True)
     submitted = models.DateField(auto_now_add=True)

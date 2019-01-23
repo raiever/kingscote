@@ -1,0 +1,16 @@
+{% extends 'register/student.html' %}
+
+{% block title %}
+All Students
+{% endblock title %}
+
+{% block content %}
+<h1>All Students</h1>
+
+<ul>
+    {% for student in all_students %}
+        <li>{{ student.name }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

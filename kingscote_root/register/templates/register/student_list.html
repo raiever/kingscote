@@ -1,4 +1,4 @@
-{% extends 'register/student.html' %}
+{% extends "register/student.html" %}
 
 {% block title %}
 All Students
@@ -7,10 +7,19 @@ All Students
 {% block content %}
 <h1>All Students</h1>
 
-<ul>
+<table style='border-collapse: collapse'>
+    <tr class="studenthdr">
+        <th>ID</th>
+        <th>Student Name</th>
+        <th>English Level</th>
+    </tr>
     {% for student in all_students %}
-        <li>{{ student.name }}</li>
+        <tr class="studentrow {% cycle '' 'altrow' %}">
+            <td><a href="show/{{ student.id }}">{{ student.id }}</a></td>
+            <td>{{ student.name }}</td>
+            <td>{{ student.en_level }}</td>
+        </tr>
     {% endfor %}
-</ul>
+</table>
 
 {% endblock content %}

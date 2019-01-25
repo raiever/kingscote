@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title %}
+Student Login
+{% endblock title %}
+
+{% block sidenav %}
+    <li><a href='/'>Home</a></li>
+{% endblock sidenav %}
+
+{% block content %}
+<h1>Please login</h1>>
+<p>You must be logged in to check your classes.</p>
+
+<form method="post" action="{% url 'login' %}">
+    <table>
+        {{ form.as_table }}
+        <tr>
+            <td>&nbsp;</td>
+            <td><input type="submit" value="login"></td>
+        </tr>
+    </table>
+<p>Not registerd yet? <a href="{% url 'register' %}">Register here</a>.</p>
+<input type="hidden" name="next" value="{{ next }}" />
+{% csrf_token %} 
+</form>
+{% endblock content %}

@@ -23,9 +23,9 @@ from django.views.generic.base import TemplateView
 urlpatterns = [
     path('testpage', TemplateView.as_view(template_name='pages/page.html')),
     path('admin/', admin.site.urls),
-    path('register2/success/', TemplateView.as_view(template_name="registration/success.html"), name='register-success'),
-    path('register2/', Register.as_view(), name='register'),
-    path('register/', include('register.urls')),
+    path('register_user/success/', TemplateView.as_view(template_name="registration/success.html"), name='register-success'),
+    path('register_user/', Register.as_view(), name='register'),
+    path('register_class/', include('register.urls')),
     path('', include('django.contrib.auth.urls')),
     path('', include('pages.urls')),
 ]

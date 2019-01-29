@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'register.apps.RegisterConfig',
     
     'django_countries',
+    'schedule',
+    'djangobower',
 
     'django.contrib.admin',
     'django.contrib.auth',
@@ -125,5 +127,18 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'kingscote_site/static')
+    os.path.join(BASE_DIR, 'kingscote_site/static'),
+    'djangobower.finders.BowerFinder',
 ]
+
+# STATICFILES_FINDERS = [
+#     'djangobower.finders.BowerFinder',
+# ]
+
+BOWER_COMPONENTS_ROOT = 'kingscote_root/components/'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap',
+)

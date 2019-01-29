@@ -3,12 +3,18 @@
 <html>
     <head>
         <meta charset="utf-8">
+        <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
+
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600" rel="stylesheet">
+        <link rel="stylesheet" href="{% static 'reset.css' %}" type="text/css"> <!-- CSS reset --> 
+        <link rel="stylesheet" href="{% static 'style.css' %}" type="text/css"> <!-- Resource style --> 
+
         <title>
             {% block title %}
             Untitled Document
             {% endblock title %}
         </title>
-        <link href="{% static 'main.css' %}" rel="stylesheet" type="text/css">
     </head>
     <body>
         <div id="wrapper">
@@ -28,13 +34,13 @@
                 <nav id="nav">
                     <ul>
                         {% block sidenav %}
-                        <li><a href="/">Menu 1</a></li>
+                        <li>Menu 1</li>
                         <li>Menu 2</li>
                         <li>Menu 3</li>
                         {% endblock sidenav %}
                         <li><a href="/contact">Contact Us</a></li>
-                        <li><a href="/register/">Register Student</a></li>
-                        <li><a href="/register/show">Students List</a></li>
+                        <li><a href="/register_class/">Register Class</a></li>
+                        <li><a href="/register_class/show">Students List</a></li>
                     </ul>
                 </nav>
             </aside>
@@ -49,4 +55,11 @@
             </footer>
         </div>
     </body>
+
+<script src="{% static '/js/modernizr.js' %}"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+<script>
+    if( !window.jQuery ) document.write('<script src="{% static "/js/jquery-3.0.0.min.js" %}"><\/script>');
+</script>
+<script src="{% static '/js/main.js' %}"></script> <!-- Resource jQuery -->
 </html>

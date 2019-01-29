@@ -36,3 +36,6 @@ def contact(request):
         if 'submitted' in request.GET:
             submitted = True
     return render(request, 'pages/contact.html', {'form': form, 'page_list': Page.objects.all(), 'submitted': submitted})
+
+def class_timetable(request):
+    return render(request, 'pages/index.html')

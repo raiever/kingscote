@@ -4,7 +4,7 @@ from django.views.generic.edit import CreateView
 from django.contrib.auth.forms import UserCreationForm
 from django.urls import reverse_lazy
 
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.http import HttpResponseRedirect
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -63,11 +63,23 @@ def student_reg(request):
             except Exception:
                 pass
             student.save()
-            return HttpResponseRedirect('/register/?submitted=True')
+            return HttpResponseRedirect('/register_class/?submitted=True')
     else:
         form = StudentForm()
         if 'submitted' in request.GET:
             submitted = True
-    return render(request, 'register/student.html', {'form': form, 'page_list': Page.objects.all(), 'submitted': submitted})
+    return render(request, 'register/class_register.html', {'form': form, 'page_list': Page.objects.all(), 'submitted': submitted})
+
+def index(request, pagename):
+    pagename = '/' + pagename
+    pg = get_object_or_404(Page, permalink=pagename)
+    context = {
+        'title': pg.title,
+        'content': pg.bodytext,
+        'last_updated': pg.update_date,
+        'page_list': Page.objects.all(),
+    }
+    # assert False
+    return render(request, 'pages/page.html', context)
 
 # Create your views here.

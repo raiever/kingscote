@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}
+{{ title }} <!-- check title in views.py -->
+{% endblock title %}
+
+{% block sidenav %}
+    {% for page in page_list %} <!-- check page_list in views.py -->
+    <li>
+      <a href="{{ page.permalink }}">{{ page.title }}</a> <!-- permalink & title from views.py -->
+    </li>
+    {% endfor %}
+{% endblock sidenav %}
+
+
+{% block content %}
+{% autoescape off %} <!-- check autoescape -->
+{{ content }} <!-- check content from views.py -->
+{% endautoescape %}
+
+<p>
+    Page last updated: {{ last_updated|date:'D d F Y'}} <!-- check last_updated from views.py -->
+</p>
+{% endblock content %}

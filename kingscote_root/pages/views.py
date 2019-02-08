@@ -38,4 +38,4 @@ def contact(request):
     return render(request, 'pages/contact.html', {'form': form, 'page_list': Page.objects.all(), 'submitted': submitted})
 
 def class_timetable(request):
-    return render(request, 'pages/index.html')
+    return render(request, 'pages/index.html', {'page_list': Page.objects.all()})

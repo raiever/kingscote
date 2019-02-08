@@ -42,7 +42,7 @@ Main Components
 @media only screen and (min-width: 800px) {
   .cd-schedule {
     width: 90%;
-    max-width: 1400px;
+    max-width: 1200px;
     margin: 2em auto;
   }
   .cd-schedule::after {
@@ -84,10 +84,10 @@ Main Components
     background: #EAEAEA;
   }
   .cd-schedule .timeline li:last-of-type::after {
-    display: none;
+    display: block;
   }
   .cd-schedule .timeline li span {
-    display: none;
+    display: block;
   }
 }
 
